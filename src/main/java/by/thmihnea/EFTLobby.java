@@ -82,13 +82,11 @@ public class EFTLobby extends AbstractPlugin {
     @Override
     protected void start() {
         this.start = System.currentTimeMillis();
-        instance = this;
+        this.con = new SQLConnection();
+        this.setupInstance();
         this.registerEvents(this.listeners);
         this.setupFiles();
         this.setupObjects();
-        this.con = new SQLConnection();
-        this.con.connect();
-        this.con.setupDefaults();
         this.logInfo("Plugin has been successfully enabled! Process took: " + (System.currentTimeMillis() - this.start) + "ms");
     }
 
@@ -112,5 +110,13 @@ public class EFTLobby extends AbstractPlugin {
      */
     private void setupObjects() {
         Bukkit.getOnlinePlayers().forEach(EFTPlayer::new);
+    }
+
+    /**
+     * Sets up the instance for the
+     * {@link EFTLobby} class.
+     */
+    private void setupInstance() {
+        instance = this;
     }
 }

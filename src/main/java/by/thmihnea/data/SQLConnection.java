@@ -28,6 +28,16 @@ public class SQLConnection {
     public static Integer port;
 
     /**
+     * Default constructor for the
+     * {@link SQLConnection} class.
+     * Used in {@link EFTLobby}
+     */
+    public SQLConnection() {
+        this.connect();
+        this.setupDefaults();
+    }
+
+    /**
      * Returns the connection to the database
      *
      * @return database connection

@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="EFT-Lobby:jar">
-    <output-path>$USER_HOME$/Desktop/rohi server/factions/plugins</output-path>
-    <root id="archive" name="EFT-Lobby.jar">
-      <element id="module-output" name="EFT-Lobby" />
-    </root>
-  </artifact>
-</component>
